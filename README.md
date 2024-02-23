@@ -1,30 +1,25 @@
-# React + TypeScript + Vite
+Para instalar realizar los siguientes pasos:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+clonar el repositorio con git clone
+npm i
+En ambiente desarrollo ejecutar 'npm run dev'
+Para compilar npm run build
+Para levantar en ambiente productivo en local ejecutar 'npm run dev'
 
-Currently, two official plugins are available:
+Descipción APP
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Se utilizo:
+- React version 18
+- Redux Toolkit para el manejo de acciones y estados
+- reactContext para el manejar el inicio de sesión
+- localStorage para mantener los productos nuevos, actualizaciones y borrados
+- ReactRouter version 6
+- Vite para la creación del proyecto ya que el hot module replacement es muy rápido
 
-## Expanding the ESLint configuration
+Esta es una aplicación web creada en React 18. Se encarga de consumir los endpoints de la web https://restful-api.dev/
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Al inicio se simula un login donde solo hay que hacer click en login y podra acceder a la pantalla del dashboard, si no se hace click en login no permitira acceder a otra pantalla
+- Una vez dentro del dashboard se encuentran los productos iniciales de la api, maquetados sobre una tabla y mostrando su información.
+- Acá podrá crear un nuevo producto, actualizar un producto y eliminar el producto (Para actualizar o eliminar primero tendrá que crear uno nuevo para poder actualizarlo o eliminarlo)
+- Acá podra buscar por nombre de producto (Primero inserte el nombre y luego presiona enter para buscar el producto, para volver a mostrar todos solo presione enter con el input vacío).
+- Acá podra paginar por cada 3 productos
