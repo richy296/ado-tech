@@ -36,6 +36,7 @@ export const AuthProvider = ({children}: {children: ReactElement | ReactElement[
     localStorage.setItem('user', JSON.stringify(user));
 
     dispatch(action)
+    return name;
   }
 
   const logout = () => {
@@ -53,7 +54,10 @@ export const AuthProvider = ({children}: {children: ReactElement | ReactElement[
     <AuthContext.Provider value={{
       ...authState,
       login,
-      logout
+      logout,
+      user: {
+        name: 'Richard Rojas'
+      }
     }}>
         {children}
     </AuthContext.Provider>
