@@ -16,6 +16,9 @@ Se utilizo:
 - ReactRouter version 6
 - Vite para la creación del proyecto ya que el hot module replacement es muy rápido
 - Sass, bootstrap y animated.css para estilos
+- Se dockerizo el proyecto
+    - docker build . -t "ado-tech-project:v1.0"
+    - docker run -p 8080:8080 ado-tech-project:v1.0
 
 Esta es una aplicación web creada en React 18. Se encarga de consumir los endpoints de la web https://restful-api.dev/
 
