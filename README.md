@@ -15,6 +15,7 @@ Se utilizo:
 - localStorage para mantener los productos nuevos, actualizaciones y borrados
 - ReactRouter version 6
 - Vite para la creación del proyecto ya que el hot module replacement es muy rápido
+- Sass, bootstrap y animated.css para estilos
 
 Esta es una aplicación web creada en React 18. Se encarga de consumir los endpoints de la web https://restful-api.dev/
 
