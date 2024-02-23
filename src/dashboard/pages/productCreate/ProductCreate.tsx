@@ -61,7 +61,7 @@ export const ProductCreate = () => {
               value={productPrice}
               onChange={onInputChange} />
 
-          <button onClick={onSubmitForm} className="btn btn-primary mb-2">Crear usuario</button>
+          <button onClick={onSubmitForm} className="btn btn-primary mb-2">Crear producto</button>
           <button onClick={ resetForm } className="btn btn-info mb-2">Limpiar Formulario</button>
           <button onClick={() => navigate('/')} className="btn btn-outline-primary">Regresar</button>
         </>
