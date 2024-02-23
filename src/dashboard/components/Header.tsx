@@ -1,14 +1,13 @@
-import { useAppDispatch } from "../../hooks/useAppDispatch";
-import { createProduct } from "../../store/slices/product";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
-  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   return (
     <>
         <section className="d-flex justify-content-between mt-4">
             <h1>Productos</h1>
-            <button type="button" className="btn btn-primary" onClick={() => dispatch(createProduct())}>Crear Producto</button>
+            <button type="button" className="btn btn-primary" onClick={() => navigate('/product/create')}>Crear Producto</button>
         </section>
         <hr />
     </>

@@ -7,11 +7,13 @@ export interface Products {
 }
 
 export interface Data {
-    price?:         number;
-    color?:         string;
-    generation?:    string;
-    Capacity?:      string;
-    "Screen size"?: number;
-    Generation?:    string;
-    Price?:         string;
+    price:   number;
+    year:    string;
+    color?:  string;
+}
+
+export interface ProductData {
+    productName: string,
+    productYear: string,
+    productPrice: number
 }

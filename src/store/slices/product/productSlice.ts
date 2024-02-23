@@ -15,7 +15,11 @@ const initialState = {
     product: {
         id: '',
         name: '',
-        data: {}
+        data: {
+            price: 0,
+            year: '',
+            color: ''
+        }
     },
     isLoading: false
  } satisfies ProductState as ProductState
@@ -27,9 +31,12 @@ export const productSlice = createSlice({
         startLoadingProducts: (state, /* action */ ) => {
             state.isLoading = true;
         },
+        endLoadingProducts: (state, /* action */ ) => {
+            state.isLoading = false;
+        },
         setProduct: (state, action) => {
             state.isLoading = false;
-            state.product = action.payload.product;
+            state.product = action.payload;
         },
         setProducts: (state, action) => {
             state.isLoading = false;
@@ -39,6 +46,15 @@ export const productSlice = createSlice({
         addProduct: (state, action) => {
             state.isLoading = false;
             state.products.push(action.payload)
+            localStorage.setItem('products', JSON.stringify(state.products));
+        },
+        putProduct: (state, action) => {
+            state.isLoading = false;
+            const indexProduct = state.products.findIndex(product => product.id === action.payload.id);
+            const newProducts = [...state.products];
+            newProducts[indexProduct] = {...newProducts[indexProduct], ...action.payload};
+            state.products = newProducts;
+            localStorage.setItem('products', JSON.stringify(state.products));
         },
         removeProduct: (state, action) => {
             state.isLoading = false;
@@ -49,4 +65,4 @@ export const productSlice = createSlice({
 
 
 // Action creators are generated for each case reducer function
-export const { startLoadingProducts, setProducts, addProduct, removeProduct, setProduct } = productSlice.actions;
+export const { startLoadingProducts, setProducts, addProduct, removeProduct, setProduct, endLoadingProducts, putProduct } = productSlice.actions;

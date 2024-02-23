@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { deleteProduct } from "../../store/slices/product";
 import { Products } from "../interfaces/interfaces"
 
 export const Table = ({products}: {products: Products[]}) => {
+    const navigate = useNavigate();
     const dispatch = useAppDispatch();
     return (
         <table className="table table-striped table-bordered">
@@ -25,7 +26,7 @@ export const Table = ({products}: {products: Products[]}) => {
                                 <Link to={`/product/${id}`} className="btn btn-link">Ir a detalle</Link>
                             </td>
                             <td className="d-flex gap-2">
-                                <button type="button" className="btn btn-warning">Actualizar</button>
+                                <button type="button" className="btn btn-warning" onClick={() => navigate(`/product/update/${id}`)}>Actualizar</button>
                                 <button type="button" className="btn btn-danger" onClick={() => dispatch(deleteProduct(id))}>Borrar</button>
                             </td>
                         </tr>

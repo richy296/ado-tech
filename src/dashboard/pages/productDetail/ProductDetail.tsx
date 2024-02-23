@@ -32,8 +32,9 @@ export const ProductDetail = () => {
                 <div className="col-8  animate__animated animate__fadeInRight">
                     <h3>{product.name}</h3>
                     <ul className="list-group list-group-flush">
-                        <li className="list-group-item"><b>Precio:</b> {product.data.price}</li>
-                        <li className="list-group-item"><b>Color:</b> {product.data.color}</li>
+                        <li className="list-group-item"><b>Precio:</b> {product.data.price ? product.data.price : 'No disponible'}</li>
+                        <li className="list-group-item"><b>Año:</b> {product.data.year ? product.data.year : 'No disponible'}</li>
+                        <li className="list-group-item"><b>Color:</b> {product.data.color ? product.data.color : 'No disponible'}</li>
                     </ul>
 
                     <button onClick={() => navigate('/')} className="btn btn-outline-primary">

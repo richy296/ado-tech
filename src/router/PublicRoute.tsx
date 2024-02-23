@@ -9,7 +9,7 @@ export const PublicRoute = ({children}: {children: ReactElement | ReactElement[]
 
     return (!logged)
     ? children
-    : <Navigate to="/dashboard" />
+    : <Navigate to="/products" />
 }
 
 PublicRoute.propTypes = {

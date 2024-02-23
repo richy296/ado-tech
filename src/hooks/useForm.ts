@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
-export const useForm = ( initialForm = {} ) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const useForm = ( initialForm: any = {} ) => {
   
     const [ formState, setFormState ] = useState( initialForm );
 
-    const onInputChange = ({ target }) => {
+    const onInputChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(target)
         const { name, value } = target;
         setFormState({
             ...formState,
