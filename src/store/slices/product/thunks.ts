@@ -58,8 +58,14 @@ export const createProduct = ({...products}) => {
 
         const {productName, productYear, productPrice, onResetForm} = products
 
-        if (productName.length < 1 || productYear.length < 1 || productPrice.length < 1 || productPrice < 0) {
+        if (productName.length < 1 || productYear.length < 1 || productPrice.length < 1) {
             alert('Tiene que completar todos los campos');
+            dispatch(endLoadingProducts());
+            return;
+        }
+
+        if (productPrice < 1) {
+            alert('El precio tiene que ser mayor a 0');
             dispatch(endLoadingProducts());
             return;
         }
@@ -93,8 +99,14 @@ export const updateProduct = ({...products}) => {
 
         const {id, productName, productYear, productPrice} = products;
 
-        if (productName.length < 1 || productYear.length < 1 || productPrice.length < 1 || productPrice < 0) {
+        if (productName.length < 1 || productYear.length < 1 || productPrice.length < 1) {
             alert('Tiene que completar todos los campos');
+            dispatch(endLoadingProducts());
+            return;
+        }
+
+        if (productPrice < 1) {
+            alert('El precio tiene que ser mayor a 0');
             dispatch(endLoadingProducts());
             return;
         }

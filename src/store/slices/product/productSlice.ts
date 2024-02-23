@@ -45,7 +45,7 @@ export const productSlice = createSlice({
         },
         addProduct: (state, action) => {
             state.isLoading = false;
-            state.products.push(action.payload)
+            state.products.unshift(action.payload)
             localStorage.setItem('products', JSON.stringify(state.products));
         },
         putProduct: (state, action) => {
@@ -59,6 +59,7 @@ export const productSlice = createSlice({
         removeProduct: (state, action) => {
             state.isLoading = false;
             state.products = state.products.filter(product => product.id !== action.payload);
+            localStorage.setItem('products', JSON.stringify(state.products));
         }
     }
 });
