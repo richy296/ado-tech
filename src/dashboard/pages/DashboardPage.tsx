@@ -8,7 +8,7 @@ export const DashboardPage = () => {
   const {isLoading, products} = useAppSelector((state: RootState) => state.products);
   const [newProducts, setNewProducts] = useState(products);
   const dispatch = useAppDispatch();
-
+  
   useEffect(() => {
     dispatch(getProducts() as AppDispatch);
   }, [dispatch]);
